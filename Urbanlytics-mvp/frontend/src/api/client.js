@@ -1,4 +1,5 @@
-const BASE_URL = 'http://localhost:8000/api'
+// ✅ UPDATED BACKEND URL - RENDER DEPLOYMENT
+const BASE_URL = 'https://urbanlytics-mvp-1.onrender.com/api';
 
 async function handleResponse(res) {
   if (!res.ok) {
@@ -22,7 +23,7 @@ export async function runSimulation(trafficReduction) {
   const res = await fetch(`${BASE_URL}/simulation`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ traffic_reduction: trafficReduction }),
+    body: JSON.stringify({ traffic_reduction: trafficReduction })
   })
   return handleResponse(res)
 }
